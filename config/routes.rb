@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
+  get 'reviews/show'
 
-  get 'sessions/create'
+  get 'reviews/create'
 
-  get 'sessions/destroy'
+  get 'reviews/destroy'
 
-  resources :products
+  resources :products do
+    resources :reviews, only: [:show, :create, :destroy]
+    end
   resources :users, only: [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
