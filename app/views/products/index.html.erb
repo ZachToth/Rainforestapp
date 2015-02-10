@@ -1,0 +1,8 @@
+<h1> View all Products! </h1>
+
+<% @products.each do |product| %>
+  <p><%= link_to product.name, "/products/#{product.id}" %></p>
+  <p><%= product.description %></p>
+  <p><%= product.price_in_cents %></p>
+  <% end %>
+
