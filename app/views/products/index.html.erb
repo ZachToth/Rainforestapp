@@ -3,7 +3,7 @@
 <% @products.each do |product| %>
   <p><%= link_to product.name, "/products/#{product.id}" %></p>
   <p><%= product.description %></p>
-  <p><%= product.price_in_cents %></p>
+  <p><%= product.formatted_price %></p>
   <% end %>
 
   <%= link_to "Add a product!", new_product_path %>
